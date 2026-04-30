@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+
 import Magnetic from '@/components/animations/Magnetic';
 
 export default function About() {
