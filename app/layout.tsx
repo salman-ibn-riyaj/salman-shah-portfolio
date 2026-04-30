@@ -14,11 +14,17 @@ export const metadata: Metadata = {
     'Frontend Developer passionate about creating beautiful, interactive, and high-performance web experiences.',
   keywords: ['Frontend Developer', 'React', 'Next.js', 'Portfolio', 'Salman Shah'],
   authors: [{ name: 'Salman Shah' }],
+  icons: {
+    icon: '/profile.png',
+    shortcut: '/profile.png',
+    apple: '/profile.png',
+  },
   openGraph: {
     title: 'Salman Shah | Frontend Developer',
     description:
       'Frontend Developer passionate about creating beautiful, interactive, and high-performance web experiences.',
     type: 'website',
+    images: [{ url: '/profile.png' }],
   },
 };
 
