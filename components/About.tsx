@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 import Magnetic from '@/components/animations/Magnetic';
+import Link from 'next/link';
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -97,10 +98,11 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <Magnetic>
-                <button className="flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg group">
+                <Link download="salman_resume.pdf" href={'/salman_resume.pdf'}><button className="flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg group">
                   Download Resume
                   <span className="text-lg group-hover:translate-y-1 transition-transform">📄</span>
-                </button>
+                </button></Link>
+                
               </Magnetic>
             </motion.div>
           </div>
