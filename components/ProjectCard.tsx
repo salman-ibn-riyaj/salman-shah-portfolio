@@ -36,6 +36,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <>
+      {/* Card */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +54,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           }}
         />
 
-        {/* Image Area */}
+        {/* Image */}
         <div className="h-48 w-full bg-slate-800 relative overflow-hidden">
           <img
             src={image}
@@ -63,61 +64,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60" />
         </div>
 
+        {/* Content */}
         <div className="p-6 flex flex-col flex-grow relative z-20">
           <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
             {title}
           </h3>
-          <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">{description}</p>
 
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {tags.map((tag, i) => (
-              <motion.span
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 + i * 0.05 }}
-                key={tag}
-                className="bg-slate-800/80 backdrop-blur-sm border border-white/5 text-gray-300 text-xs px-3 py-1 rounded-full group-hover:border-blue-500/30 transition-colors"
-              >
-                {tag}
-              </motion.span>
-            ))}
-          </div>
-
-          {/* Buttons row */}
-          <div className="flex gap-3 mt-auto">
-            {/* Live Demo */}
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative overflow-hidden flex-1 bg-white text-black py-3 rounded-xl text-center font-bold transition-all group/btn"
-            >
-              <span className="relative z-10 group-hover/btn:text-white transition-colors duration-300 text-sm">
-                Live Demo
-              </span>
-              <div className="absolute inset-0 bg-blue-600 translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300 ease-out" />
-            </a>
-
-            {/* GitHub */}
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 rounded-xl bg-slate-800 border border-white/10 text-gray-400 hover:bg-white hover:text-black transition-all duration-300"
-              title="GitHub Repo"
-            >
-              <FaGithub size={20} />
-            </a>
-
-            {/* View Detail */}
+          {/* View Details button only */}
+          <div className="mt-auto pt-4">
             <button
               onClick={() => setShowDetail(true)}
-              className="flex items-center justify-center w-12 h-12 rounded-xl bg-slate-800 border border-white/10 text-gray-400 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300"
-              title="View Details"
+              className="relative overflow-hidden w-full py-3 rounded-xl text-center font-bold bg-white text-black transition-all group/btn"
             >
-              <ExternalLink size={18} />
+              <span className="relative z-10 group-hover/btn:text-white transition-colors duration-300 text-sm">
+                View Details
+              </span>
+              <div className="absolute inset-0 bg-blue-600 translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300 ease-out" />
             </button>
           </div>
         </div>
@@ -145,7 +107,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               <div className="h-52 w-full relative overflow-hidden">
                 <img src={image} alt={title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
-                {/* Close button */}
                 <button
                   onClick={() => setShowDetail(false)}
                   className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-slate-900/80 border border-white/10 text-gray-400 hover:text-white hover:bg-slate-800 transition-colors"
@@ -156,18 +117,25 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+
+                {/* Description */}
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">{description}</p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs px-3 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                {/* Technologies */}
+                <div className="mb-8">
+                  <p className="text-xs text-gray-500 uppercase tracking-widest mb-3 font-medium">
+                    Technologies
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs px-3 py-1 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Action buttons */}
