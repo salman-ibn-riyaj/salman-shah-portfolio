@@ -58,7 +58,7 @@ export default function CustomCursor() {
           scale: isHovering ? 1.5 : 1,
           opacity: isHovering ? 0 : 1,
         }}
-        transition={{ type: 'spring', stiffness: 300, damping: 28, mass: 0.5 }}
+        transition={{ type: 'spring', stiffness: 800, damping: 35, mass: 0.3 }}
       />
       {/* Inner Dot */}
       <motion.div
@@ -69,7 +69,7 @@ export default function CustomCursor() {
           scale: isHovering ? 4 : 1,
           backgroundColor: isHovering ? '#fff' : '#3b82f6',
         }}
-        transition={{ type: 'spring', stiffness: 500, damping: 28, mass: 0.5 }}
+        transition={{ type: 'spring', stiffness: 1200, damping: 35, mass: 0.2 }}
       />
     </>
   );
